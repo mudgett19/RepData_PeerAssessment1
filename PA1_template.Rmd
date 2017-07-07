@@ -31,13 +31,13 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 Let's read in the data and call the data set "activity."
 
-```{r activity}
+```{r}
 activity <- read.csv("activity.csv")
 ```
 
 Let's check out what the data look like.
 
-```{r activity}
+```{r}
 str(activity)
 
 head(activity)
@@ -65,10 +65,12 @@ The next requirement is to find the mean and median of the total daily steps.
 
 ```{r}
 stepsmean <- mean(totalsteps)
+stepsmean
+
 stepsmedian <- median(totalsteps)
+stepsmedian
 ```
 
-The mean value is ```{r} stepsmean```, and the median value is ```{r} stepsmedian```.
 
 ## Daily Activity Pattern
 
@@ -94,6 +96,7 @@ Let's find the interval with the maximum average daily steps.
 
 ```{r}
 maxint <- stepsbyint[which.max(stepsbyint)]
+maxint
 ```
 
 So the interval with the maximum average steps is 835, with average steps in that interval of 206. Cool!
@@ -134,7 +137,10 @@ hist(stepseachday, main=paste("Total Steps per Day"), col = "green", xlab="Numbe
 # Calculate the new mean and median
 
 meanimpute <- mean(stepseachday)
+meanimpute 
+
 medianimpute <- median(stepseachday)
+medianimpute
 ```
 
 Imputing the missing values using the mean of each interval doesn't have an impact on the mean or median of steps taken per day.  If another method of imputing the missing values had been used, the results could vary.
